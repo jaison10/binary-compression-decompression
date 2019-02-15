@@ -3,31 +3,31 @@
 #include <cstdlib> 
 using namespace std; 
 
-// calculating height of Huffman Tree 
+
 #define MAX_TREE_HT 100 
 
 // A Huffman tree node 
 struct MinHeapNode { 
 
 
-	char data; 	    // One of the input characters 
-	unsigned freq; // Frequency of the character 
+	char data; 	        // One of the input characters 
+	unsigned freq;     // Frequency of the character 
  
 	struct MinHeapNode *left, *right;   	// Left and right child of this node
 }; 
 
 // A Min Heap: Collection of min heap (or Hufmman tree) nodes 
+
 struct MinHeap { 
 
-	unsigned size;   // Current size of min heap 
-	unsigned capacity;   // capacity of min heap 
+	unsigned size;        // Current size of min heap 
+	unsigned capacity;    // capacity of min heap 
 
 	struct MinHeapNode** array;  // Array of minheap node pointers 
 }; 
 
-// A utility function allocate a new 
-// min heap node with given character 
-// and frequency of the character 
+// A utility function allocate a new min heap node with given character and frequency of the character 
+
 struct MinHeapNode* newNode(char data, unsigned freq) 
 { 
 	struct MinHeapNode* temp = (struct MinHeapNode*)malloc(sizeof(struct MinHeapNode)); 
@@ -39,15 +39,14 @@ struct MinHeapNode* newNode(char data, unsigned freq)
 	return temp; 
 } 
 
-// A utility function to create 
-// a min heap of given capacity 
+// A utility function to create a min heap of given capacity 
+
 struct MinHeap* createMinHeap(unsigned capacity) 
 
 { 
 	struct MinHeap* minHeap = (struct MinHeap*)malloc(sizeof(struct MinHeap)); 
 
-	// current size is 0 
-	minHeap->size = 0; 
+	minHeap->size = 0;     // current size is 0 
 
 	minHeap->capacity = capacity; 
 
